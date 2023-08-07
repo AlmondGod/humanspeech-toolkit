@@ -1,7 +1,7 @@
 # Human Speech Toolkit:
 
 ### Audio Processing
-#### .wav minifiles creation
+#### Creation .wav sub-files
 
 The main file in this program that takes a buckeye .wav file and a .txt file with the end times of every consonant 
 and outputs individual .wav files for all the consonants, (Here, the txt file is myoutaug8.txt and the wav files are s0401a.wav through s0404a.wav), 
@@ -26,7 +26,7 @@ find_relevantcs.py:
             ex: (g, 0.3248, 245.84632, s0401a)
 
 ### Embeddings 
-#### mfccs, plps, and bnfs -> dtwdist and cosines
+#### Creates mfccs, plps, and bnfs -> dtwdist and cosines
 Computes MFCCs, PLPs, DTW distance, cosines for the relevant pairs (relevant meaning only the ones that were rated). The extractors are functions which return embeddings given .wav files as inputs. Cosine similarity writer and DTW distance writer use these to return a single value for a given pair of .wav files with filenames and their corresponding embedding.
 
 ### Comparisons
@@ -77,7 +77,7 @@ are txt files called "refined".
 ex: refined_h2dhbnfcos.txt is refined from high_to_diffhigh_bnfcos.txt
 
 ### Querying
-#### for data analysis
+#### For data analysis
 The format of the refined and p_refined files is:
 format: vowel1.cons_vowel2_set_talker+session_startingtime_30f(rating), vowel1.cons_vowel2_set_talker+session_startingtime_30f(rating): cosine
 
