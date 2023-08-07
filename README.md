@@ -77,7 +77,7 @@ are txt files called "refined".
 ex: refined_h2dhbnfcos.txt is refined from high_to_diffhigh_bnfcos.txt
 
 ### Querying
-
+####for data analysis
 The format of the refined and p_refined files is:
 format: vowel1.cons_vowel2_set_talker+session_startingtime_30f(rating), vowel1.cons_vowel2_set_talker+session_startingtime_30f(rating): cosine
 
