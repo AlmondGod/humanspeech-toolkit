@@ -26,12 +26,10 @@ find_relevantcs.py:
             ex: (g, 0.3248, 245.84632, s0401a)
 
 ### Embeddings 
-#### mfccs, plps, and bnfs
-#### dtwdist and cosines
+#### mfccs, plps, and bnfs -> dtwdist and cosines
 Computes MFCCs, PLPs, DTW distance, cosines for the relevant pairs (relevant meaning only the ones that were rated). The extractors are functions which return embeddings given .wav files as inputs. Cosine similarity writer and DTW distance writer use these to return a single value for a given pair of .wav files with filenames and their corresponding embedding.
 
 ### Comparisons
-#### the endgame of the toolkit
 #### Verifies human ratings with computer-produced cosines and dtw distances
 
 cosine_plp_matrix and cosine_mfcc_matrix are 2D arrays with first column being filenames and second column being an array with the cosine of this file compared to every other file (same order as columns)
