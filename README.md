@@ -1,6 +1,8 @@
-FILE PURPOSES:
+#FILE PURPOSES:
 
-Consonant_filemaker:
+#Audio Processing
+##.wav minifiles creation
+
 The main file in this program that takes a buckeye .wav file and a .txt file with the end times of every consonant 
 and outputs individual .wav files for all the consonants, (Here, the txt file is myoutaug8.txt and the wav files are s0401a.wav through s0404a.wav), 
 but filters and outputs only the consonant audiofiles for the relevant consonants based on i_trans_items_buck.txt.
@@ -14,7 +16,7 @@ Also has capability to print nicely formatted names and information on the audio
 
 Various parameters, especially the padding on filtering for relevant consonants (currently 0.04) can be changed
     There is a comment about this in the relevant location in consonant_filemaker (towards the bottom)
---------------------------------
+
 
 find_relevantcs.py:
     Has the method create_consonant_matrix
@@ -23,13 +25,12 @@ find_relevantcs.py:
             (consonant, duration, timing, and what section its in)
             ex: (g, 0.3248, 245.84632, s0401a)
 
-UPDATE:
-7/24/2023
-Anand
+#Embeddings
+##mfccs, plps, and bnfs
+##dtwdist and cosines
+Computes MFCCs, PLPs, DTW distance, cosines for the relevant pairs (relevant meaning only the ones that were rated). The extractors are functions which return embeddings given .wav files as inputs. Cosine similarity writer and DTW distance writer use these to return a single value for a given pair of .wav files with filenames and their corresponding embedding.
 
-Effectively completed.
-
-Explanation of each txt file:
+#Comparisons
 
 cosine_plp_matrix and cosine_mfcc_matrix are 2D arrays with first column being filenames and second column being an array with the cosine of this file compared to every other file (same order as columns)
 dtw_mfcc_matrix.txt and dtw_plp_matrix.txt are plp and mfcc dtw distances formatted the same way as described above
